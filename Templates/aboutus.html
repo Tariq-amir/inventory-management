@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}
+About Us
+{% endblock title %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="/static/about.css">
+{% endblock stylesheet %}
+
+{% block body %}
+<div class="row ff">
+    <div class="col bg">
+        <h1 class="pt-5 mt px-5 text-white">About Us</h1>
+        <p class="text-light px-5 py-3 mb">After two centuries, a paper-and-pencil inventory system still works,
+            but given the incredible advances in simple-to-use digital inventory management software, why use such
+            limited tools? Digital inventory refers to the ability to oversee real-time inventory activity. It
+            involves the use of inventory tracking systems and other types of technology to enhance visibility by
+            tracking data and collecting information as finished goods move through the supply chain. We started our
+            journey just few days back with a view to grow our management system in well manner and in day to day
+            observing the state of the products we buy and maintaining the best performing conditions of them.</p>
+    </div>
+    <div class="col bg-light">
+        <div class="mt-5 pt-5">
+            <p class="text-muted">
+                <div class="container img-1">
+                    <img src="/static/images/digitalmarket.jpeg" class="" alt=""> 
+                </div> <br>
+                <small>A new concept is sweeping the world of additive manufacturing: Digital
+                    Inventory. When these verified digital inventories are deployed in companies it ensures a high
+                    level of repeatability and most importantly, no need for additional back and forth clarification
+                    before production. This establishes the optimized processes that will become automatic supply
+                    chains in the future, with new AM parts being ordered as soon as when a part is marked as broken
+                    by a repair team or even based on low inventory levels.
+             </small> </p>
+        </div>
+    </div>
+</div>
+
+
+{% endblock body %}

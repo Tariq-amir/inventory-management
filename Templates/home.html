@@ -1,0 +1,157 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home
+{% endblock title %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="/static/home.css">
+{% endblock stylesheet %}
+
+{% block body %}
+<div class="head pt-5">
+  <div class="container ">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+      <div class="carousel-inner p-top">
+        <div class="carousel-item active">
+          <h2 class="text-danger heading-text"><strong>Inventory Management System</strong> </h2>
+          <p class="text-secondary head-text">The Inventory office is responsible for tagging and control reporting of all
+            departmental movable equipment, purchased for CSE department. </p>
+        </div>
+        <div class="carousel-item">
+          <h2 class="text-primary heading-text"><strong>Inventory Management System</strong> </h2>
+          <p class="text-dark head-text">Admin can create and manage items which institute needs to distribute among
+            students and faculties. </p>
+        </div>
+        <div class="carousel-item">
+          <h2 class="text-success heading-text"><strong>Inventory Management System</strong> </h2>
+          <p class="text-warning head-text">Track your products throughout the entire supply chain from purchasing to
+            usabilities.</p>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-target="#carouselExampleFade" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-target="#carouselExampleFade" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </button>
+    </div>
+
+  </div>
+
+</div>
+<div class="container pt-3 bg-light">
+  <p class="pb-3 pt-4 container des"><i class="fa fa-chevron-circle-right"></i> This is just a digital form of
+    previously used hand made buying and storing inventory. Digitization takes an analog process and changes it to a
+    digital form without any different-in-kind changes to the process itself. The primary purpose of inventory
+    management is to ensure there is enough goods or materials to meet demand without creating overstock, or excess
+    inventory. Here you are getting:</p>
+  <div class="row text-md-center">
+    <div class="col-lg-4">
+      <h5><i class="bg-success p-1 fa fa-star rounded-circle" aria-hidden="true"></i> Managing Made Easy</h5>
+      <p class=" text-muted">Alwyas tracks of the goods bought or need to buy. We provide the feature in our School
+        Administration Software where admin can take in request for the particular items. The rightful authority can
+        decide whether to accept or decline the request. </p>
+    </div>
+    <div class="col-lg-4">
+      <h5><i class="bg-success p-1 fa fa-star rounded-circle" aria-hidden="true"></i> Purchase Orders</h5>
+      <p class=" text-muted">No need to keep managing the books to maintain purchase orders. Admin can directly note
+        down the Purchase orders in our Institute Management System. Once added admin has the option to Print PDF and
+        view. One can also mark the order as received to directly add them in stock.</p>
+    </div>
+    <div class="col-lg-4">
+      <h5><i class="bg-success p-1 fa fa-star rounded-circle" aria-hidden="true"></i> Stock & Sections</h5>
+      <p class=" text-muted">Admin can also view all details of one particular item. Different groups can be created for
+        the distribution of stock. Admin also has the option to create sub-sections. Items can be alloted to the
+        sections or subsections created.</p>
+    </div>
+  </div>
+</div>
+
+<div class="container pb-5">
+  <p class="pl-3 pt-3 des">For continious updates we keep track the entry and allotment of every prodycts at the moment we
+    receive.</p>
+  <p class="pl-3 pb-2 des "><strong>Add New Product:</strong> </p>
+  <div class="product">
+    <h4 class="text-center font-weight-bold p-4">Product Description</h4>
+    <form class="pl-4">
+      <div class="pb-2">
+        <label for="name" class="font-weight-bold bg-light">Name:</label>
+        <input type="text" name="name" id="name" required>
+      </div>
+
+      <div class="pb-2">
+        <label for="model" class="font-weight-bold bg-light">Model:</label>
+        <input type="text" name="model" id="model" required>
+      </div>
+
+      <div class="pb-2">
+        <label for="category" class="font-weight-bold bg-light">Category:</label>
+        <select name="category" id="category">
+          <option selected class="text-center">---</option>
+          <option value="computer">Computers & Accessories</option>
+          <option value="eltrical">Electrical Gadgets</option>
+          <option value="others">Others</option>
+        </select>
+      </div>
+
+      <div class="pb-2">
+        <label for="quantity" class="font-weight-bold bg-light">Quantity:</label>
+        <input type="number" name="quantity" id="quantity" min="1" required>
+      </div>
+      <div class="pb-2">
+        <label for="price" class="font-weight-bold bg-light">Price(Taka <strong>&#x09F3</strong> ):</label>
+        <input type="number" name="price" id="price" min="0" required>
+      </div>
+
+      <div>
+        <label for="dob" class="font-weight-bold bg-light">Date of buy:</label>
+        <input type="date" name="dob" id="dob">
+      </div><br>
+
+      <div class="pb-2">
+        <label for="allotdiv" class="font-weight-bold bg-light">Alloted:</label>
+        <select name="place" id="place">
+          <option selected value="null">---</option>
+          <option value="classroom">Class Room</option>
+          <option value="lab">LAB</option>
+          <option value="office">Office</option>
+          <option value="others">Others</option>
+        </select>
+        <label for="allotroom" class="font-weight-bold bg-light pl-2">Room:</label>
+        <select name="allotroom" id="allotroom">
+          <option selected value="null">---</option>
+        </select>
+      </div>
+      <div class="button p-4">
+        <button class="btn btn-success" type="submit">Add Product</button><br><br>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<script>
+  document.getElementById('place').addEventListener('click', function () {
+    const val = document.getElementById('place').value;
+    if (val == 'null') {
+      document.getElementById('allotroom').innerHTML = '<option value="---">---</option>'
+    }
+    if (val == 'classroom') {
+      document.getElementById('allotroom').innerHTML = '<option value="101">101</option><option value="102">102</option><option value="103">103</option><option value="104">104</option><option value="201">201</option><option value="202">202</option><option value="203">203</option><option value="204">204</option>'
+    }
+    if (val == 'lab') {
+      document.getElementById('allotroom').innerHTML = '<option value="acl">ACL</option><option value="gd">GD Lab</option><option value="hw">H/W Lab</option><option value="os">OS Lab</option><option value="nw">N/W Lab</option><option value="pg">PG Lab</option><option value="sw">S/W Lab</option>'
+    }
+    if (val == 'office') {
+      document.getElementById('allotroom').innerHTML = '<option value="fo">Faculty Office</option><option value="so">Staff Office</option><option value="sr">Seminar Room</option>'
+    }
+    if(val== 'others'){
+      document.getElementById('allotroom').innerHTML = 'option value="---">---</option'
+    }
+  })
+</script>
+
+{% endblock body %}

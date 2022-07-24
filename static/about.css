@@ -1,0 +1,31 @@
+body{
+    overflow-x: hidden;
+}
+.ff {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 120%;
+}
+
+.bg{
+    background-color:#24db93;
+}
+
+.mt{
+    margin-top: 150px;
+}
+
+.mb{
+    margin-bottom: 150px;
+}
+
+img{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+  }
+
+.img-1{
+    display: flex;
+    justify-content: center;
+    padding: auto;
+  }

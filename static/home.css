@@ -1,0 +1,41 @@
+.head {
+    background: linear-gradient(rgba(255, 255, 255, .2), rgba(255, 255, 255, .2)), url("/static/images/digital_inventory.jpg");
+    background-size: auto;
+    height: 350px;
+    background-repeat: no-repeat;
+    margin-top: 40px;
+
+}
+
+.head-text {
+    text-align: center;
+    font-size: larger;
+}
+
+.heading-text {
+    text-align: center;
+
+}
+
+.p-top {
+    padding-top: 70px !important;
+}
+
+.des{
+    font-size: larger;
+}
+
+.product{
+    width: 40%;
+    height: auto;
+    margin: auto;
+    overflow: auto;
+    background: linear-gradient(rgba(255, 255, 255, .3), rgba(255, 255, 255, .3)), url("/static/images/form.jpg") center /cover;
+    border-radius: 10px;
+    box-shadow: 5px 20px 30px black;
+    }
+
+.button{
+    display: flex;
+    justify-content: center;
+}
