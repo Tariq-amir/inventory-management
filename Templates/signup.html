@@ -15,7 +15,7 @@
     <div class="main">
         <div class="signup">
             <form action="" method="post" name="signup">
-            {% csrf_token %}
+                {% csrf_token %}
                 <label for="chk" aria-hidden="true" class="head1">Sign up</label>
                 <input type="text" id="username" name="username" placeholder="User Name" required="">
                 <input type="email" id="email" name="email" placeholder="Email" required="">
@@ -23,9 +23,9 @@
                 <input type="password" id="pass2" name="pass2" placeholder="Confirm Password" required="">
                 <button type="submit" name="signup">Sign Up</button>
                 <br>
-                <a class="below link" href="{% url 'signin' %}"><strong>  Sign in </strong></a>
+                <a class="below link" href="{% url 'signin' %}"><strong> Sign in </strong></a>
             </form>
-            
+
         </div>
 
     </div>

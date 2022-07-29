@@ -77,6 +77,12 @@ Home
   <div class="product">
     <h4 class="text-center font-weight-bold p-4">Product Description</h4>
     <form class="pl-4">
+
+      <div class="pb-2">
+        <label for="tender" class="font-weight-bold bg-light">Tender No:</label>
+        <input type="text" name="tender" id="name" required>
+      </div>
+
       <div class="pb-2">
         <label for="name" class="font-weight-bold bg-light">Name:</label>
         <input type="text" name="name" id="name" required>
@@ -85,16 +91,6 @@ Home
       <div class="pb-2">
         <label for="model" class="font-weight-bold bg-light">Model:</label>
         <input type="text" name="model" id="model" required>
-      </div>
-
-      <div class="pb-2">
-        <label for="category" class="font-weight-bold bg-light">Category:</label>
-        <select name="category" id="category">
-          <option selected class="text-center">---</option>
-          <option value="computer">Computers & Accessories</option>
-          <option value="eltrical">Electrical Gadgets</option>
-          <option value="others">Others</option>
-        </select>
       </div>
 
       <div class="pb-2">
@@ -137,7 +133,7 @@ Home
   document.getElementById('place').addEventListener('click', function () {
     const val = document.getElementById('place').value;
     if (val == 'null') {
-      document.getElementById('allotroom').innerHTML = '<option value="---">---</option>'
+      document.getElementById('allotroom').innerHTML = '<option value="null">---</option>'
     }
     if (val == 'classroom') {
       document.getElementById('allotroom').innerHTML = '<option value="101">101</option><option value="102">102</option><option value="103">103</option><option value="104">104</option><option value="201">201</option><option value="202">202</option><option value="203">203</option><option value="204">204</option>'
@@ -149,7 +145,7 @@ Home
       document.getElementById('allotroom').innerHTML = '<option value="fo">Faculty Office</option><option value="so">Staff Office</option><option value="sr">Seminar Room</option>'
     }
     if(val== 'others'){
-      document.getElementById('allotroom').innerHTML = 'option value="---">---</option'
+      document.getElementById('allotroom').innerHTML = 'option value="null">---</option'
     }
   })
 </script>
