@@ -23,7 +23,17 @@ Dashboard
                     labels: ['January', 'February', 'March', 'April', 'May', 'June','July','August','September','October','November','December'],
                     datasets: [{
                         label: 'Expenses',
-                        data: [12, 19, 23, 9, 27, 5,0,1,2,3,4,5],
+                        data: ['{{expense.0.1}}',
+                        '{{expense.1.2}}',
+                        '{{expense.2.3}}',
+                        '{{expense.4.5}}',
+                        '{{expense.5.6}}',
+                        '{{expense.6.7}}',
+                        '{{expense.7.8}}',
+                        '{{expense.8.9}}',
+                        '{{expense.9.10}}',
+                        '{{expense.10.11}}',
+                        '{{expense.11.12}}'],
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.5)',
                             'rgba(54, 162, 235, 0.5)',
@@ -73,30 +83,22 @@ Dashboard
         <thead class="thead-dark">
           <tr>
             <th scope="col">#</th>
+            <th scope="col">Tender No</th>
             <th scope="col">Product</th>
             <th scope="col">Amount</th>
             <th scope="col">Alloted Room</th>
           </tr>
         </thead>
         <tbody>
+          {% for product in products %}
           <tr>
-            <th scope="row">1</th>
-            <td></td>
-            <td></td>
-            <td></td>
+            <th scope="row">{{forloop.counter}}</th>
+            <td>{{product.tender_no}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.room}}</td>
           </tr>
-          <tr>
-            <th scope="row">2</th>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <th scope="row">3</th>
-            <td></td>
-            <td> </td>
-            <td></td>
-          </tr>
+          {% endfor %}
         </tbody>
       </table>
 </div>

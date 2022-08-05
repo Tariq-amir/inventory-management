@@ -21,11 +21,11 @@
     padding-top: 70px !important;
 }
 
-.des{
+.des {
     font-size: larger;
 }
 
-.product{
+.product {
     width: 40%;
     height: auto;
     margin: auto;
@@ -33,9 +33,33 @@
     background: linear-gradient(rgba(255, 255, 255, .3), rgba(255, 255, 255, .3)), url("/static/images/form.jpg") center /cover;
     border-radius: 10px;
     box-shadow: 5px 20px 30px black;
-    }
+}
 
-.button{
+.button {
     display: flex;
     justify-content: center;
+}
+
+form label {
+    display: inline;
+    margin: 5px 0 5px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+input[type=text],
+input[type=date],
+input[type=number] {
+    height: 100%;
+    border: 1px solid gray;
+    outline: none;
+    padding: 3px;
+    color: #000;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+select {
+    margin-bottom: 10px;
 }

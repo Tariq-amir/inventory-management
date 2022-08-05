@@ -15,7 +15,8 @@ Home
       <div class="carousel-inner p-top">
         <div class="carousel-item active">
           <h2 class="text-danger heading-text"><strong>Inventory Management System</strong> </h2>
-          <p class="text-secondary head-text">The Inventory office is responsible for tagging and control reporting of all
+          <p class="text-secondary head-text">The Inventory office is responsible for tagging and control reporting of
+            all
             departmental movable equipment, purchased for CSE department. </p>
         </div>
         <div class="carousel-item">
@@ -71,81 +72,46 @@ Home
 </div>
 
 <div class="container pb-5">
-  <p class="pl-3 pt-3 des">For continious updates we keep track the entry and allotment of every prodycts at the moment we
+  <p class="pl-3 pt-3 des">For continious updates we keep track the entry and allotment of every prodycts at the moment
+    we
     receive.</p>
   <p class="pl-3 pb-2 des "><strong>Add New Product:</strong> </p>
+
   <div class="product">
     <h4 class="text-center font-weight-bold p-4">Product Description</h4>
-    <form class="pl-4">
-
-      <div class="pb-2">
-        <label for="tender" class="font-weight-bold bg-light">Tender No:</label>
-        <input type="text" name="tender" id="name" required>
+    <form method="post" class="pl-4">
+      <div class="block-body">
+        {% csrf_token %}
+        {{ form }}
+        <div class="button p-4">
+          <div class="d-flex justify-content-center">
+            <input type="submit" class="btn btn-success" style="display: block;" value="Add Product" id="submit">
+          </div>
+        </div>
       </div>
-
-      <div class="pb-2">
-        <label for="name" class="font-weight-bold bg-light">Name:</label>
-        <input type="text" name="name" id="name" required>
-      </div>
-
-      <div class="pb-2">
-        <label for="model" class="font-weight-bold bg-light">Model:</label>
-        <input type="text" name="model" id="model" required>
-      </div>
-
-      <div class="pb-2">
-        <label for="quantity" class="font-weight-bold bg-light">Quantity:</label>
-        <input type="number" name="quantity" id="quantity" min="1" required>
-      </div>
-      <div class="pb-2">
-        <label for="price" class="font-weight-bold bg-light">Price(Taka <strong>&#x09F3</strong> ):</label>
-        <input type="number" name="price" id="price" min="0" required>
-      </div>
-
-      <div>
-        <label for="dob" class="font-weight-bold bg-light">Date of buy:</label>
-        <input type="date" name="dob" id="dob">
-      </div><br>
-
-      <div class="pb-2">
-        <label for="allotdiv" class="font-weight-bold bg-light">Alloted:</label>
-        <select name="place" id="place">
-          <option selected value="null">---</option>
-          <option value="classroom">Class Room</option>
-          <option value="lab">LAB</option>
-          <option value="office">Office</option>
-          <option value="others">Others</option>
-        </select>
-        <label for="allotroom" class="font-weight-bold bg-light pl-2">Room:</label>
-        <select name="allotroom" id="allotroom">
-          <option selected value="null">---</option>
-        </select>
-      </div>
-      <div class="button p-4">
-        <button class="btn btn-success" type="submit">Add Product</button><br><br>
-      </div>
-
     </form>
+
   </div>
 </div>
 
 <script>
-  document.getElementById('place').addEventListener('click', function () {
-    const val = document.getElementById('place').value;
+  document.getElementById('id_room').innerHTML = '<option value="null">---</option>'
+  document.getElementById('id_alloted').addEventListener('click', function () {
+    const val = document.getElementById('id_alloted').value;
     if (val == 'null') {
-      document.getElementById('allotroom').innerHTML = '<option value="null">---</option>'
+      document.getElementById('id_room').innerHTML = '<option value="null">---</option>'
     }
     if (val == 'classroom') {
-      document.getElementById('allotroom').innerHTML = '<option value="101">101</option><option value="102">102</option><option value="103">103</option><option value="104">104</option><option value="201">201</option><option value="202">202</option><option value="203">203</option><option value="204">204</option>'
+      document.getElementById('id_room').innerHTML = '<option value="101">101</option><option value="102">102</option><option value="103">103</option><option value="104">104</option><option value="201">201</option><option value="202">202</option><option value="203">203</option><option value="204">204</option>'
     }
     if (val == 'lab') {
-      document.getElementById('allotroom').innerHTML = '<option value="acl">ACL</option><option value="gd">GD Lab</option><option value="hw">H/W Lab</option><option value="os">OS Lab</option><option value="nw">N/W Lab</option><option value="pg">PG Lab</option><option value="sw">S/W Lab</option>'
+      document.getElementById('id_room').innerHTML = '<option value="ACL">ACL</option><option value="GD Lab">GD Lab</option><option value="H/W Lab">H/W Lab</option><option value="OS Lab">OS Lab</option><option value="N/W Lab">N/W Lab</option><option value="PG Lab">PG Lab</option><option value="S/W Lab">S/W Lab</option>'
     }
     if (val == 'office') {
-      document.getElementById('allotroom').innerHTML = '<option value="fo">Faculty Office</option><option value="so">Staff Office</option><option value="sr">Seminar Room</option>'
+      document.getElementById('id_room').innerHTML = '<option value="Faculty Office">Faculty Office</option><option value="Staff Office">Staff Office</option><option value="Seminar Room">Seminar Room</option>'
     }
-    if(val== 'others'){
-      document.getElementById('allotroom').innerHTML = 'option value="null">---</option'
+    if (val == 'others') {
+      document.getElementById('id_room').innerHTML = '<option value="null">---</option>'
     }
   })
 </script>
