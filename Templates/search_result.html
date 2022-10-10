@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Tender list
+{% endblock title %}
+
+{% block stylesheet %}
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.8.0/dist/chart.min.js"></script>
+
+{% endblock stylesheet %}
+
+{% block body %}
+<table class="table" style="margin-top: 50px;">
+    <thead class="thead-dark">
+        <tr>
+            <th colspan="3" style="text-align: center;">Tender No: {{tender_no}}</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr class="thead-light">
+            <th scope="col" class="pl-5">Product</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Price</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td class="pl-5">{{product.name}}</td>
+            <td>{{product.quantity}}</td>
+            <td>{{product.price}}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{{result}}
+
+{% endblock body %}

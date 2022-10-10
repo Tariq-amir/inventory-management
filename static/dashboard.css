@@ -1,0 +1,8 @@
+label[for=id_text]{
+    display: none;
+}
+
+.search-bar{
+    float:right;
+    margin-bottom: 20px;
+}

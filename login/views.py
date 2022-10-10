@@ -1,4 +1,5 @@
 from itertools import product
+from unittest import result
 from xml.etree.ElementTree import tostring
 
 from django.shortcuts import redirect, render, HttpResponse
@@ -6,7 +7,7 @@ from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 
-from inventory.forms import ProductForm
+from inventory.forms import ProductForm, SearchForm
 from inventory.models import Product
 from pyuca import Collator
 from django.db import connections
@@ -28,30 +29,37 @@ def home(request):
             alloted = form.cleaned_data['alloted']
             room = form.cleaned_data['room']
             month_year = str(date_of_buy)[0:7]
+            year = str(date_of_buy)[0:4]
             product = Product(tender_no=tender_no, name=name, model=model, quantity=quantity,
-                              price=price, date_of_buy=date_of_buy, alloted=alloted, room=room, month_year=month_year)
+                              price=price, date_of_buy=date_of_buy, alloted=alloted, room=room, month_year=month_year, year=year)
             product.save()
     form = ProductForm()
     return render(request, 'home.html', {'form': form})
 
 
 def dashboard(request):
+    if request.method == 'POST':
+        form = SearchForm(request.POST)
+        if form.is_valid():
+            return redirect('/results/'+form.cleaned_data['text'])
+
     result = Product.objects.raw(
         "select id,month_year,sum(price) as total from inventory_product where year='2022' group by month_year  order by month_year asc")
+    print(result[0])
     expense = []
-    y=0
+    y = 0
     for x in range(12):
-        month=0
+        month = 0
         try:
             month = str(result[y].month_year)[5:]
         except:
-            month=13
-        month_expense={}
+            month = 13
+        month_expense = {}
         if x == int(month)-1:
             month_expense = {
                 str(x+1): result[y].total,
             }
-            y+=1
+            y += 1
         else:
             month_expense = {
                 str(x+1): 0,
@@ -60,12 +68,13 @@ def dashboard(request):
         expense.append(month_expense)
     print(expense)
     products = Product.objects.all().order_by('name')
-    # for product in products:
-    #     if product.room=='gd':
-    #         product.room
+
+    form = SearchForm()
+
     context = {
         'products': products,
         'expense': expense,
+        'form': form
     }
     return render(request, 'dashboard.html', context)
 
@@ -140,3 +149,13 @@ def signup(request):
             return redirect('signup')
 
     return render(request, 'signup.html')
+
+
+def search_result(request, text):
+    result = Product.objects.raw(
+        f"select * from inventory_product where tender_no='{text}' order by name desc")
+    context = {
+        'products': result,
+        'tender_no': text
+    }
+    return render(request, 'search_result.html', context)

@@ -14,6 +14,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css"
     integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/static/css/bootstrap.css">
   <link rel="stylesheet" href="/static/base.css">
   <link rel="shortcut icon" href="/static/images/logo.jpg" type="image/x-icon">
 
@@ -27,7 +28,7 @@
   {% if user.is_authenticated %}
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand " href="#"><img src="/static/images/logo.jpg" alt=""><strong >&nbsp;IM</strong></a>
+    <a class="navbar-brand " href="#"><img src="/static/images/logo.jpg" alt=""><strong>&nbsp;IM</strong></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
       aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -44,19 +45,6 @@
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-expanded="false">
-            Accounts
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
-        </li>
-
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-            aria-expanded="false">
             {{request.user}}
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -67,7 +55,7 @@
     </div>
   </nav>
   <br>
-  
+
   {% block body %}
   {% endblock body %}
 
@@ -79,8 +67,8 @@
           <h5 class="text-uppercase mb-4 text-warning font-weight-bold">Contact</h5>
           <p><i class="font-weight-bold fa fa-home "> Address:</i> Talaimari,Kazla,</p>
           <p>Rajshahi,Bangladesh</p>
-          <p><i class="font-weight-bold fa fa-phone "> Phone:</i> </p>
-          <p><i class="font-weight-bold fa fa-envelope-o"> Email:</i></p>
+          <p><i class="font-weight-bold fa fa-phone "> Phone:</i> +88 (721) 750742-3, 751320-1</p>
+          <p><i class="font-weight-bold fa fa-envelope-o"> Email:</i> registrar@ruet.ac.bd</p>
         </div>
 
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
