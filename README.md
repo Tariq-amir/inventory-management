@@ -9,7 +9,7 @@ The Supply Inventory Management System is a Django-based web application designe
 * User-friendly interface for easy navigation and management.
 
 ## Technologies Used
-Django: Web framework for building the application.
-SQLite: Database management system for storing data.
-HTML/CSS: Frontend design and styling.
-Bootstrap: Frontend framework for responsive design.
+* Django: Web framework for building the application.
+* SQLite: Database management system for storing data.
+* HTML/CSS: Frontend design and styling.
+* Bootstrap: Frontend framework for responsive design.
