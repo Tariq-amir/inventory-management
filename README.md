@@ -16,10 +16,10 @@ The Supply Inventory Management System is a Django-based web application designe
 
 ## Snapshots
 ![image](https://github.com/Tariq-amir/inventory-management/assets/20150887/3be5bba1-f1e1-42a7-9dfd-a8e662323723)
-![image](https://github.com/Tariq-amir/inventory-management/assets/20150887/46eb2ab0-70b9-44e0-bedd-bedbb8b13a3a)
-![image](https://github.com/Tariq-amir/inventory-management/assets/20150887/89ff1f96-c756-4e4e-858c-5daebb95158e)
-![image](https://github.com/Tariq-amir/inventory-management/assets/20150887/9c37849c-801d-4f46-be84-867ddbbef94a)
-![image](https://github.com/Tariq-amir/inventory-management/assets/20150887/e8081227-a81e-4835-9a68-13290ccdb508)
-![image](https://github.com/Tariq-amir/inventory-management/assets/20150887/f27f88ac-2e7e-49ad-a387-14cf7a4003b4)
-![image](https://github.com/Tariq-amir/inventory-management/assets/20150887/3342dd63-710d-4496-8af6-9cbaac037a23)
-![image](https://github.com/Tariq-amir/inventory-management/assets/20150887/191a0377-a923-423b-a682-8b3218f137b1)
+![image](https://github.com/Tariq-amir/inventory-management/assets/20150887/d3d1e743-0d7e-4f8c-8d9c-fffefe96e84f)
+![image](https://github.com/Tariq-amir/inventory-management/assets/20150887/df3de79c-a72c-452c-8996-8bd15de6e898)
+![image](https://github.com/Tariq-amir/inventory-management/assets/20150887/cefb99d6-b3cc-42e1-915f-5bf9d2af9fc5)
+![image](https://github.com/Tariq-amir/inventory-management/assets/20150887/d760e5f8-3fce-458c-9294-fdba33546954)
+![image](https://github.com/Tariq-amir/inventory-management/assets/20150887/57e94b84-7702-472b-a9ae-91c24486990e)
+![image](https://github.com/Tariq-amir/inventory-management/assets/20150887/2ce70a16-5662-488a-8930-623989288f7e)
+![image](https://github.com/Tariq-amir/inventory-management/assets/20150887/bfda7c1b-50bd-48c1-a562-38c76ac974bb)
