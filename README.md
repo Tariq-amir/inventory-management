@@ -13,3 +13,6 @@ The Supply Inventory Management System is a Django-based web application designe
 * SQLite: Database management system for storing data.
 * HTML/CSS: Frontend design and styling.
 * Bootstrap: Frontend framework for responsive design.
+
+## Snapshots
+![image](https://github.com/Tariq-amir/inventory-management/assets/20150887/3be5bba1-f1e1-42a7-9dfd-a8e662323723)
